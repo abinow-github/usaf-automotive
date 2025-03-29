@@ -1,0 +1,10 @@
+RewriteEngine on
+
+# Redirect "home" specifically to "index.html"
+RewriteRule ^home$ index.html [L]
+RewriteRule ^services$ service.hrml [L]
+
+# Redirect any other URL to its corresponding .html file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ $1.html [L]
